@@ -14,9 +14,25 @@ const createGrid = (container, gridSize = 16) => {
   container.addEventListener("mouseover", (e) => {
     // Only run if we hovered on a square
     if (e.target.className === "square") {
-      e.target.classList.add(CLASS_HOVERED);
+      // e.target.classList.add(CLASS_HOVERED);
+      generateRandomColor(e.target);
+      increaseOpacity(e.target);
     }
   });
+};
+
+const generateRandomColor = (element) => {
+  const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+  element.style.backgroundColor = "#" + randomColor;
+};
+
+const increaseOpacity = (element) => {
+  // Get original opacity
+  let opacity = window.getComputedStyle(element).opacity;
+  // Decrease the value by .1
+  opacity -= 0.1;
+  // Set it back
+  element.style.opacity = opacity;
 };
 
 const removeGrid = () => {
