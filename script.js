@@ -23,4 +23,6 @@ const createGrid = () => {
   });
 };
 
+const changeGrid = () => {};
+
 createGrid();

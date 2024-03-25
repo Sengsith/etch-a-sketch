@@ -4,15 +4,21 @@
   padding: 0;
 }
 
+.container {
+  width: 40rem;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+}
+
 .row {
-  font-size: 0;
+  display: flex;
+  flex: 1;
 }
 
 .square {
-  display: inline-block;
   background-color: aquamarine;
-  width: 5rem;
-  height: 5rem;
+  flex: inherit;
 }
 
 .hovered {
