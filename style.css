@@ -1,0 +1,7 @@
+.square {
+  display: inline-block;
+  color:aquamarine;
+  border: 1px solid blue;
+  width: 5rem;
+  height: 5rem;
+}
