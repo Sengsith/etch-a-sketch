@@ -29,10 +29,14 @@ createGrid(container);
 
 const button = document.querySelector(".create-grid");
 button.addEventListener("click", () => {
-  let enteredGridSize = 0;
-  enteredGridSize = parseInt(
-    prompt("Please enter a number between 1 and 100: ")
-  );
+  let enteredGridSize;
+  enteredGridSize = prompt("Please enter a number between 1 and 100: ");
+
+  // No alert if user clicks cancel or esc
+  if (enteredGridSize === null) return;
+
+  enteredGridSize = +enteredGridSize;
+
   if (isNaN(enteredGridSize) || enteredGridSize < 1 || enteredGridSize > 100) {
     alert("Invalid input, please enter a number between 1 and 100!");
     return;
